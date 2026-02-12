@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Be My Valentine ❤️</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 20px;
+  }
+
+  .gif-container img {
+    width: 110px;
+    margin: 5px;
+    border-radius: 12px;
+  }
+
+  .button-area {
+    position: relative;
+    width: 90%;
+    height: 200px;
+    margin-top: 30px;
+  }
+
+  button {
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    position: absolute;
+  }
+
+  #yesBtn {
+    background-color: #ff4d6d;
+    color: white;
+    left: 30%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  #noBtn {
+    background-color: #6c757d;
+    color: white;
+    left: 60%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+</style>
+</head>
+
+<body>
+
+<h1>Will You Be My Valentine? 💖</h1>
+
+<div class="gif-container">
+  <img src="https://media.tenor.com/2roX3uxz_68AAAAC/bubu-dudu.gif">
+  <img src="https://media.tenor.com/t8v7XG6b0x0AAAAC/bubu-dudu-love.gif">
+  <img src="https://media.tenor.com/5i4qF5EYh1gAAAAC/bubu-dudu-cute.gif">
+</div>
+
+<div class="button-area" id="area">
+  <button id="yesBtn">Yes ❤️</button>
+  <button id="noBtn">No 😢</button>
+</div>
+
+<script>
+  const noBtn = document.getElementById("noBtn");
+  const yesBtn = document.getElementById("yesBtn");
+  const area = document.getElementById("area");
+
+  function moveNoButton() {
+    const maxX = area.clientWidth - noBtn.offsetWidth;
+    const maxY = area.clientHeight - noBtn.offsetHeight;
+
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
+
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+    noBtn.style.transform = "none";
+  }
+
+  noBtn.addEventListener("mouseover", moveNoButton);
+  noBtn.addEventListener("click", moveNoButton);
+	noBtn.addEventListener("touchstart", moveNoButton);
+
+
+  yesBtn.addEventListener("click", () => {
+    alert("I knew it ❤️🥰");
+  });
+</script>
+
+</body>
+</html>
